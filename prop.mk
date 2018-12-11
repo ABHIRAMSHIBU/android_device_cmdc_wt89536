@@ -2,6 +2,11 @@
 # system.prop for YUREKA2
 #
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-filter=speed \
+dalvik.vm.image-dex2oat-filter=speed
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
 af.fast_track_multiplier=2 \
@@ -38,9 +43,12 @@ vendor.voice.voip.conc.disabled=true
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
 bluetooth.hfp.client=1 \
-vendor.qcom.bluetooth.soc=smd \
+qcom.bluetooth.soc=smd \
 ro.bluetooth.hfp.ver=1.7 \
-ro.qualcomm.bt.hci_transport=smd
+ro.qualcomm.bt.hci_transport=smd \
+persist.bt.enableAptXHD=true \
+persist.service.btui.use_aptx=1 \
+persistent.bt.a2dp_offload_cap=sbc-aptx-aptXHD
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -78,9 +86,9 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
+ro.sf.lcd_density=440 \
 debug.sdm.support_writeback=0 \
-sdm.debug.rotator_downscale=1 \
-ro.sf.lcd_density=440
+sdm.debug.rotator_downscale=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -111,7 +119,7 @@ av.debug.disable.pers.cache=1 \
 media.aac_51_output_enabled=true \
 media.msm8956hw=0 \
 media.stagefright.audio.sink=280 \
-mm.enable.qcom_parser=3183219 \
+mm.enable.qcom_parser=1048575 \
 mm.enable.smoothstreaming=true \
 mmp.enable.3g2=true \
 vendor.audio.hw.aac.encoder=true \
@@ -124,7 +132,8 @@ vendor.vidc.enc.disable_bframes=1
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.sys.fw.dex2oat_thread_count=8 \
-ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.extension_library=libqti-perfd-client.so \
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -153,7 +162,7 @@ persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=0 \
 persist.radio.apm_sim_not_pwdn=1 \
-persist.radio.calls.on.ims=0 \
+persist.radio.calls.on.ims=1 \
 persist.radio.csvt.enabled=false \
 persist.radio.hw_mbn_update=0 \
 persist.radio.jbims=0 \
@@ -164,14 +173,16 @@ persist.radio.videopause.mode=1 \
 persist.vendor.radio.custom_ecc=1 \
 persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
-persist.vendor.radio.jbims=0 \
 ril.subscription.types=NV,RUIM \
 rild.libargs=-d/dev/smd0 \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
 ro.telephony.call_ring.multiple=false \
 ro.telephony.default_network=22,20 \
 service.qti.ims.enabled=1 \
-telephony.lteOnCdmaDevice=1
+telephony.lteOnCdmaDevice=1 \
+#hdvoice, for those who activated in the modem \
+ro.ril.enable.amr.wideband=1 \
+ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -181,6 +192,11 @@ persist.delta_time.enable=true
 # Tcp
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
+
+# Touch optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.qti.inputopts.enable=true \
+persist.vendor.qti.inputopts.movetouchslop=0.6
 
 # Trim properties
 PRODUCT_PROPERTY_OVERRIDES += \
