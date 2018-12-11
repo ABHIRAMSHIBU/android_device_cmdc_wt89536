@@ -227,4 +227,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.logd.logpersistd=logcatd \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=adb \
-    ro.logd.size.stats=16M
+    ro.logd.size.stats=16M 
+    
+ # Fast charing
+persist.usb.hvdcp.detect=true
