@@ -18,16 +18,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from markw device
+# Inherit from YUREKA2 device
 $(call inherit-product, device/yu/YUREKA2/device.mk)
 
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common liquid stuff.
+$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 TARGET_VENDOR := YU
 PRODUCT_DEVICE := YUREKA2
-PRODUCT_NAME := lineage_YUREKA2
+PRODUCT_NAME := liquid_YUREKA2
 PRODUCT_BRAND := YU
 PRODUCT_MODEL := YU5551
 PRODUCT_MANUFACTURER := YU

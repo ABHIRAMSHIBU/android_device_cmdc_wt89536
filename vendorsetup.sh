@@ -1,1 +1,1 @@
-add_lunch_combo lineage_YUREKA2-userdebug
+add_lunch_combo liquid_YUREKA2-userdebug
