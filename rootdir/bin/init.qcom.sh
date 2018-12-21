@@ -28,6 +28,7 @@
 #
 
 target=`getprop ro.board.platform`
+low_ram=`getprop ro.config.low_ram`
 if [ -f /sys/devices/soc0/soc_id ]; then
     platformid=`cat /sys/devices/soc0/soc_id`
 else
@@ -83,7 +84,7 @@ start_msm_irqbalance_8939()
 {
 	if [ -f /vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
-		    "239" | "293" | "294" | "295" | "304" | "313")
+		    "239" | "293" | "294" | "295" | "304" | "313" |"353")
 			start vendor.msm_irqbalance;;
 		esac
 	fi
@@ -95,7 +96,7 @@ start_msm_irqbalance()
 		case "$platformid" in
 		    "317" | "324" | "325" | "326" | "345" | "346")
 			start vendor.msm_irqbalance;;
-		    "318" | "327")
+		    "318" | "327" | "385")
 			start vendor.msm_irqbl_sdm630;;
 		esac
 	fi
@@ -129,7 +130,7 @@ case "$target" in
              hw_platform=`cat /sys/devices/system/soc/soc0/hw_platform`
         fi
         case "$soc_id" in
-             "294" | "295" | "303" | "307" | "308" | "309" | "313" | "320")
+             "293" | "304" | "338" | "351" | "349" | "350" )
                   case "$hw_platform" in
                        "Surf")
                                     setprop qemu.hw.mainkeys 1
