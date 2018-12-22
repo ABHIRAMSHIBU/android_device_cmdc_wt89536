@@ -240,3 +240,14 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     
  # Fast charing
 persist.usb.hvdcp.detect=true
+
+# Add an extra 10% saturation to display colors
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.sf.color_saturation=1.1
+	
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+persist.sys.usb.config.extra=none \
+persist.sys.usb.config=mtp,adb
+	
