@@ -22,12 +22,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/yu/YUREKA2/device.mk)
 
 # Inherit some common liquid stuff.
-$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 TARGET_VENDOR := YU
 PRODUCT_DEVICE := YUREKA2
-PRODUCT_NAME := liquid_YUREKA2
+PRODUCT_NAME := havoc_YUREKA2
 PRODUCT_BRAND := YU
 PRODUCT_MODEL := YU5551
 PRODUCT_MANUFACTURER := YU

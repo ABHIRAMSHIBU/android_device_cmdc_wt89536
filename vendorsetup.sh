@@ -1,1 +1,1 @@
-add_lunch_combo liquid_YUREKA2-userdebug
+add_lunch_combo havoc_YUREKA2-userdebug
