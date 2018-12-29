@@ -1,1 +1,0 @@
-allow webview_zygote vendor_file:file { read open getattr };
